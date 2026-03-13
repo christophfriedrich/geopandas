@@ -58,7 +58,7 @@ There are two relevant operations for projections: setting a projection and re-p
 
 Setting a projection may be necessary when for some reason GeoPandas has coordinate data (x-y values), but no information about how those coordinates refer to locations in the real world. Setting a projection is how one tells GeoPandas how to interpret coordinates. If no CRS is set, GeoPandas geometry operations will still work, but coordinate transformations will not be possible and exported files may not be interpreted correctly by other software.
 
-Be aware that **most of the time** you don't have to set a projection. Data loaded from a reputable source (using the :func:`geopandas.read_file()` command) *should* always include projection information. You can see an objects current CRS through the :attr:`GeoSeries.crs` attribute.
+Be aware that **most of the time** you don't have to set a projection. Data loaded from a reputable source (using the :func:`geopandas.read_file()` command) *should* always include projection information. You can see an object's current CRS through the :attr:`GeoSeries.crs` attribute.
 
 From time to time, however, you may get data that does not include a projection. In this situation, you have to set the CRS so GeoPandas knows how to interpret the coordinates.
 
@@ -108,7 +108,7 @@ GeoPandas 0.8 implements support for different projections assigned to different
 columns of the same GeoDataFrame. The projection is now stored together with geometries per column (directly
 on the GeometryArray level).
 
-Note that if GeometryArray has an assigned projection, it cannot be overridden by an another inconsistent
+Note that if GeometryArray has an assigned projection, it cannot be overridden by another inconsistent
 projection during the creation of a GeoSeries or GeoDataFrame:
 
 .. code-block:: python
